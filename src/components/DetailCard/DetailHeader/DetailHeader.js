@@ -57,7 +57,7 @@ const DetailHeader = (props) => {
         <Grid item container direction="row">
           <Grid item xs={3}>
             <Typography variant="subtitle1" color="primary">
-              Alcohol:
+              Alcoholic:
             </Typography>
           </Grid>
           <Grid item xs={9}>

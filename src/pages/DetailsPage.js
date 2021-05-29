@@ -6,7 +6,7 @@ import api, { operations } from "../utils/API";
 
 import { useSnackbar } from "notistack";
 
-import { NavBar, PageLoader, DetailCard } from "../components";
+import { NavBar, PageLoader, DetailCard, NoResult } from "../components";
 import Drink from "../model/Drink";
 
 const DetailPage = () => {
@@ -32,6 +32,9 @@ const DetailPage = () => {
         const newDrink = rebuildData(data);
         setDrinkState({ ...newDrink });
         setIsLoading(false);
+      } else {
+        setDrinkState({});
+        setIsLoading(false);
       }
     } catch (err) {
       setIsLoading(false);
@@ -55,7 +58,7 @@ const DetailPage = () => {
       ) : drinkState.propertyIsEnumerable("name") ? (
         <DetailCard drink={drinkState} />
       ) : (
-        <PageLoader />
+        <NoResult message="Sorry couldn't find the drink" />
       )}
     </>
   );
