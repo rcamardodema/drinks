@@ -145,7 +145,7 @@ const ResultPage = (props) => {
   const lookUpHandler = async (value) => {
     setIsLoading(true);
     setInputValue(value);
-    if (value) {
+    if (value && value !== " ") {
       try {
         if (withFilter.state) {
           const newList = applyInputFilter(drinksWithFilter, value);
