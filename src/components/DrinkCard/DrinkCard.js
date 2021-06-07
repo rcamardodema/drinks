@@ -20,7 +20,7 @@ const styles = (theme) => ({
     borderTop: "3px solid orange",
     "&:hover": {
       transform: "translatey(-4px)",
-      boxShadow: `0px 2px 5px${theme.palette.primary.main}`,
+      boxShadow: `0px 2px 5px ${theme.palette.primary.main}`,
     },
   },
   img: {
@@ -78,4 +78,4 @@ DrinkCard.propTypes = {
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(DrinkCard);
+export default withStyles(styles,  {withTheme: true})(DrinkCard);

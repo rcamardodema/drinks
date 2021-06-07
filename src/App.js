@@ -46,7 +46,7 @@ function App(props) {
 
 App.propTypes = {
   classes: PropTypes.shape({
-    root: PropTypes.string,
+    root: PropTypes.string.isRequired,
   }).isRequired,
   theme: PropTypes.object.isRequired,
 };
